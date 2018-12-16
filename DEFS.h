@@ -59,13 +59,5 @@ struct GfxInfo	//Graphical info of each figure (you may add more members)
 	int BorderWdth;	//Width of figure borders
 
 };
-enum shape
-{
-	line,
-	rect,
-	trig,
-	ellipse,
-	rhombus,
-};
 
 #endif

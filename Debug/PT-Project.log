@@ -1,77 +1,10 @@
-﻿  main.cpp
-  ApplicationManager.cpp
-  Output.cpp
-  Input.cpp
-  AddRectAction.cpp
-  CRectangle.cpp
-  CFigure.cpp
-  windowinput.cpp
-  mousequeue.cpp
-  keyqueue.cpp
-  image.cpp
-c:\users\mo nader\desktop\phase2 - project framework\cmugraphicslib\image.cpp(115): warning C4018: '<': signed/unsigned mismatch
-  colors.cpp
-  CMUgraphics.cpp
-c:\users\mo nader\desktop\phase2 - project framework\cmugraphicslib\cmugraphics.cpp(257): warning C4101: 'iX': unreferenced local variable
-c:\users\mo nader\desktop\phase2 - project framework\cmugraphicslib\cmugraphics.cpp(257): warning C4101: 'iY': unreferenced local variable
-c:\users\mo nader\desktop\phase2 - project framework\cmugraphicslib\cmugraphics.cpp(751): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-  c:\program files (x86)\windows kits\10\include\10.0.17134.0\ucrt\string.h(133): note: see declaration of 'strcpy'
-c:\users\mo nader\desktop\phase2 - project framework\cmugraphicslib\cmugraphics.cpp(1164): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-  c:\program files (x86)\windows kits\10\include\10.0.17134.0\ucrt\stdio.h(1774): note: see declaration of 'sprintf'
-c:\users\mo nader\desktop\phase2 - project framework\cmugraphicslib\cmugraphics.cpp(1171): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-  c:\program files (x86)\windows kits\10\include\10.0.17134.0\ucrt\stdio.h(1774): note: see declaration of 'sprintf'
-c:\users\mo nader\desktop\phase2 - project framework\cmugraphicslib\cmugraphics.cpp(1202): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-  c:\program files (x86)\windows kits\10\include\10.0.17134.0\ucrt\stdio.h(1774): note: see declaration of 'sprintf'
-c:\users\mo nader\desktop\phase2 - project framework\cmugraphicslib\cmugraphics.cpp(1210): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-  c:\program files (x86)\windows kits\10\include\10.0.17134.0\ucrt\stdio.h(1774): note: see declaration of 'sprintf'
-c:\users\mo nader\desktop\phase2 - project framework\cmugraphicslib\cmugraphics.cpp(1357): warning C4018: '>': signed/unsigned mismatch
-  auxil.cpp
-  Generating Code...
-c:\users\mo nader\desktop\phase2 - project framework\figures\cfigure.cpp(58): warning C4715: 'CFigure::getColorName': not all control paths return a value
-c:\users\mo nader\desktop\phase2 - project framework\figures\cfigure.cpp(87): warning C4715: 'CFigure::getColorObject': not all control paths return a value
-c:\users\mo nader\desktop\phase2 - project framework\gui\input.cpp(177): warning C4715: 'Input::GetUserAction': not all control paths return a value
-  jutils.c
-  jquant2.c
-  jquant1.c
-  jmemnobs.c
-  jmemmgr.c
-c:\users\mo nader\desktop\phase2 - project framework\cmugraphicslib\jpeg\jmemmgr.c(1103): warning C4996: 'getenv': This function or variable may be unsafe. Consider using _dupenv_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-  c:\program files (x86)\windows kits\10\include\10.0.17134.0\ucrt\stdlib.h(1191): note: see declaration of 'getenv'
-c:\users\mo nader\desktop\phase2 - project framework\cmugraphicslib\jpeg\jmemmgr.c(1106): warning C4996: 'sscanf': This function or variable may be unsafe. Consider using sscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-  c:\program files (x86)\windows kits\10\include\10.0.17134.0\ucrt\stdio.h(2263): note: see declaration of 'sscanf'
-  jidctred.c
-  jidctint.c
-  jidctfst.c
-  jidctflt.c
-  jerror.c
-c:\users\mo nader\desktop\phase2 - project framework\cmugraphicslib\jpeg\jerror.c(169): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-  c:\program files (x86)\windows kits\10\include\10.0.17134.0\ucrt\stdio.h(1774): note: see declaration of 'sprintf'
-c:\users\mo nader\desktop\phase2 - project framework\cmugraphicslib\jpeg\jerror.c(171): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-  c:\program files (x86)\windows kits\10\include\10.0.17134.0\ucrt\stdio.h(1774): note: see declaration of 'sprintf'
-  jdtrans.c
-  jdsample.c
-  jdpostct.c
-  jdphuff.c
-  jdmerge.c
-  jdmaster.c
-  jdmarker.c
-  jdmainct.c
-  jdinput.c
-  jdhuff.c
-  Generating Code...
-  Compiling...
-  jddctmgr.c
-  jdcolor.c
-  jdcoefct.c
-  jdatasrc.c
-  jdapistd.c
-  jdapimin.c
-  jcparam.c
-  jcomapi.c
-  jpegload.c
-c:\users\mo nader\desktop\phase2 - project framework\cmugraphicslib\jpegload.c(23): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-  c:\program files (x86)\windows kits\10\include\10.0.17134.0\ucrt\stdio.h(208): note: see declaration of 'fopen'
-  Generating Code...
-auxil.obj : warning LNK4075: ignoring '/EDITANDCONTINUE' due to '/SAFESEH' specification
-ApplicationManager.obj : error LNK2019: unresolved external symbol "public: __thiscall SelectAction::SelectAction(class ApplicationManager *)" (??0SelectAction@@QAE@PAVApplicationManager@@@Z) referenced in function "public: void __thiscall ApplicationManager::ExecuteAction(enum ActionType)" (?ExecuteAction@ApplicationManager@@QAEXW4ActionType@@@Z)
-.\Debug/PT Project.exe : fatal error LNK1120: 1 unresolved externals
+﻿Build started 12/16/2018 10:18:32 AM.
+     1>Project "C:\Users\Adham\Desktop\Updated_Project_F18_CMPN103 - with graphics library\Phase2 - Project Framework\Phase2 - Project Framework\PT-Project.vcxproj" on node 2 (ClCompile target(s)).
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _VC80_UPGRADE=0x0600 /D _MBCS /Gm /EHsc /RTC1 /MTd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo".\Debug/" /Fd".\Debug/vc110.pdb" /FR".\Debug\\" /Gd /TP /analyze- /errorReport:prompt Actions\AddRhomAction.cpp
+         AddRhomAction.cpp
+     1>Done Building Project "C:\Users\Adham\Desktop\Updated_Project_F18_CMPN103 - with graphics library\Phase2 - Project Framework\Phase2 - Project Framework\PT-Project.vcxproj" (ClCompile target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:01.28
