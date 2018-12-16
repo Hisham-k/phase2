@@ -64,7 +64,8 @@ enum shape
 	line,
 	rect,
 	trig,
-	circ,
+	ellipse,
+	rhombus,
 };
 
 #endif

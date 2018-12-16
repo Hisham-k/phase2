@@ -1,6 +1,8 @@
 #include "ApplicationManager.h"
 #include "Actions\AddRectAction.h"
 #include "Actions\SelectAction.h"
+#include "Actions\SaveAction.h"
+#include "Actions\LoadAction.h"
 
 
 //Constructor
@@ -33,15 +35,6 @@ ActionType ApplicationManager::GetUserAction() const
 //							Select Functions										//
 //==================================================================================//
 
-//UnSelects all shapes
-void ApplicationManager::FigListUnSelector()
-{
-	for (int i = 0; i < FigCount; i++)
-	{
-		if (FigList[i]->IsSelected() )
-			FigList[i]->SetSelected(false);
-	}
-}
 bool ApplicationManager::ReturnCond_NewUnselect()
 {
 	return Cond_NewUnselect;
@@ -53,6 +46,10 @@ void ApplicationManager::SetCond_NewUnselect(bool cond)
 void ApplicationManager::AddSelectedFigureNEW(CFigure* selectedfig)
 {
 		SelectedFigureNEW = selectedfig;
+}
+CFigure* ApplicationManager::ReturnSelectedFigureNEW()
+{
+	return SelectedFigureNEW;
 }
 
 //==================================================================================//
@@ -66,6 +63,15 @@ void ApplicationManager::SaveAll(ofstream&OutFile)
 	{
 		FigList[i]->Save(OutFile);
 	}
+}
+void ApplicationManager::ClearFigList()
+{
+	for (int i = 0; i < FigCount; i++)
+	{
+		delete FigList[i];
+		FigList[i] = NULL;
+	}
+	FigCount = 0;
 }
 
 ////////////////////////////////////////////////////////////////////////////////////
@@ -86,9 +92,26 @@ void ApplicationManager::ExecuteAction(ActionType ActType)
 			///create AddLineAction here
 
 			break;
+		case DRAW_TRI:
 
+			break;
+		case DRAW_ELLIPSE:
+
+			break;
+		case DRAW_RHOMBUS:
+
+			break;
 		case SELECT:
 			pAct = new SelectAction(this);
+			break;
+			
+			//Save and Load Actions//
+		case SAVE:
+			pAct = new SaveAction(this);
+			break;
+
+		case LOAD:
+			pAct = new LoadAction(this);
 			break;
 
 
@@ -119,6 +142,10 @@ void ApplicationManager::AddFigure(CFigure* pFig)
 	{
 		FigList[FigCount] = pFig;
 		FigList[FigCount]->SetFigureID(FigCount);
+		if (FigList[FigCount]->IsSelected())
+		{
+			FigList[FigCount]->SetSelected(false);
+		}
 		FigCount++;
 		
 	}

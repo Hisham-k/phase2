@@ -14,7 +14,7 @@ class ApplicationManager
 
 private:
 	int FigCount;   //Actual number of figures
-	CFigure* SelectedFigureNEW;
+	CFigure*  SelectedFigureNEW;
 	bool      Cond_NewUnselect;
 		
 	CFigure* FigList[MaxFigCount];	//List of all figures (Array of pointers)
@@ -35,13 +35,14 @@ public:
 	void ExecuteAction(ActionType) ; //Creates an action and executes it
 
 	// -- Select-Related Functions --//
-	void FigListUnSelector();
-	void AddSelectedFigureNEW(CFigure* selectedfig);
-	bool ReturnCond_NewUnselect();
-	void SetCond_NewUnselect(bool);
+	void AddSelectedFigureNEW(CFigure* selectedfig); //Add selectedfigure to application manager for storing
+	CFigure* ReturnSelectedFigureNEW(); //Return selectedfigure for use
+	bool ReturnCond_NewUnselect(); //Return the condition to be used in selectaction
+	void SetCond_NewUnselect(bool); //set the condition to true or false for NewUnselect
 
 	// -- Save and Load Related Functions --//
 	void SaveAll(ofstream&OutFile);
+	void ClearFigList();
 
 	// -- Figures Management Functions
 	void AddFigure(CFigure* pFig);          //Adds a new figure to the FigList
