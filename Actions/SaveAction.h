@@ -6,7 +6,7 @@
 class SaveAction :public Action
 {
 	ofstream OutFile;
-	string fileName;
+	string FileName;
 	//Fuction to get the name of the color in string type
 	string getColorName(color)const;
 

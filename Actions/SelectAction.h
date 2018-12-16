@@ -6,7 +6,9 @@ class SelectAction : public Action
 private:
 	Point P;
 	CFigure* SelectedFig; 
+	CFigure* TEMPSelectedFigure;
 	bool NewUnselectCond;
+	bool HasEnteredNewUnselect;
 
 	
 public:

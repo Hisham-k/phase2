@@ -35,26 +35,18 @@ void SelectAction::Execute()
 	SelectedFig = pManager->GetFigure(P.x, P.y);
 
 
-	//Checks if a figure was clicked, and whether the clicked figure is already selected
-	if (SelectedFig != NULL)
+	if (SelectedFig == NULL)  //If user clicks on an empty spot, unselect the previous figure if it was selected (and not NULL)
 	{
-
-		if (SelectedFig->IsSelected())
+		TEMPSelectedFigure = pManager->ReturnSelectedFigureNEW();
+		if (TEMPSelectedFigure != NULL)
 		{
-			Unselect();
-		}
-		else
-		{
-			Select();
-			pManager->SetCond_NewUnselect(true);          //The condition for NewUnselect will be true as user has selected a figure
-			pManager->AddSelectedFigureNEW(SelectedFig);  //The selected figure stored in ApplicationManager
+			if (TEMPSelectedFigure->IsSelected())
+				TEMPSelectedFigure->SetSelected(false);
 		}
 	}
-	else
-		Unselect();   //SelectedFig is not a shape and therefore user did not click on a figure
 
-	if (SelectedFig != NULL)   
-	//The final check to see if you selected a figure before or not, if so...Select this figure and Unselect everything else
+	if (SelectedFig != NULL)
+		//check to see if you selected a figure before or not, if so...Select this figure and Unselect the previous
 	{
 		NewUnselectCond = pManager->ReturnCond_NewUnselect();
 		if (NewUnselectCond)
@@ -63,6 +55,27 @@ void SelectAction::Execute()
 		}
 	}
 
+	//Checks if a figure was clicked, and whether the clicked figure is already selected
+	if (SelectedFig != NULL)
+	{
+		if (SelectedFig->IsSelected())
+		{
+			Unselect();
+		}
+		else
+		{
+			Select();
+			TEMPSelectedFigure = pManager->ReturnSelectedFigureNEW(); //TEMPSelectedFigure is for temporary returns of selectedfigure stored in applicationmanager
+			if (TEMPSelectedFigure != NULL)
+			{
+				TEMPSelectedFigure->SetSelected(false);
+				TEMPSelectedFigure = NULL;
+			}
+			pManager->SetCond_NewUnselect(true); //The condition for NewUnselect will be true as user has selected a figure and may select another figure
+			pManager->AddSelectedFigureNEW(SelectedFig);  //The selected figure stored in ApplicationManager
+
+		}
+	}
 }
 
 
@@ -80,14 +93,19 @@ void SelectAction::Select()
 //Unselect a selected figure
 void SelectAction::Unselect() 
 {
-	pManager->FigListUnSelector();
+	SelectedFig->SetSelected(false);
 }
 
-void SelectAction::NewUnselect()
+void SelectAction::NewUnselect() //NewUnselect is the function called when user selects a new figure and he selected a figure previously
 {
-	pManager->FigListUnSelector();
-	SelectedFig->SetSelected(true);
-	pManager->SetCond_NewUnselect(false);
+	Select();
+	TEMPSelectedFigure = SelectedFig;
+	pManager->SetCond_NewUnselect(false);  //Cond for NewUnselect will be false after entering NewUnselect
+	SelectedFig = pManager->ReturnSelectedFigureNEW();
+	Unselect();  //Unselect previous figure that was selected
+	pManager->AddSelectedFigureNEW(TEMPSelectedFigure); //Adds the new selected figure to be stored in application manager
+	TEMPSelectedFigure = NULL; // reset to NULL
+	SelectedFig = NULL; //reset to NULL
 }
 
 

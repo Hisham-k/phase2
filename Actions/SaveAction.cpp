@@ -7,6 +7,7 @@
 SaveAction::SaveAction(ApplicationManager *pApp) :Action(pApp)
 {
 }
+
 //Read the parameters for the save action 
 void SaveAction::ReadActionParameters()
 {
@@ -17,8 +18,8 @@ void SaveAction::ReadActionParameters()
 	pOut->PrintMessage("Enter file name without spaces.");
 
 
-	fileName = pIn->GetSrting(pOut) + ".txt";
-	OutFile.open(fileName);
+	FileName = pIn->GetSrting(pOut) + ".txt";
+	OutFile.open(FileName);
 	//check if the file is opened
 	if (OutFile.is_open())
 	{
@@ -35,44 +36,43 @@ void SaveAction::Execute()
 	//check if the file is opened
 	if (OutFile.is_open())
 	{
-		//Save in the file the current draw clr & fill clr & number of figuers 
-		int numberOfFiguers = pManager->ReturnFigureCount();
+		int NumberOfFigures = pManager->ReturnFigureCount();
 		string DrawClr = getColorName(UI.DrawColor);
 		OutFile << DrawClr;
 		string FillClr = getColorName(UI.FillColor);
 		OutFile << '\t' << FillClr << endl;
-		OutFile << numberOfFiguers << endl;
-		//calling the function saveAll in the application manager that have the access to the figlist
+		OutFile << NumberOfFigures << endl;
+		//Calling the function saveAll in the application manager that have the access to the figlist
 		pManager->SaveAll(OutFile);
-		//close the file after saveing
+		//Close the file after saveing
 		OutFile.close();
 	}
 }
-//utility fn to return a string of the color 
-string SaveAction::getColorName(color a)const
+
+string SaveAction::getColorName(color clr)const
 {
 
-	if (a == RED)
+	if (clr == RED)
 	{
 		return "RED";
 	}
 
-	if (a == BLACK)
+	if (clr == BLACK)
 	{
 		return "BLACK";
 	}
 
-	if (a == BLUE)
+	if (clr == BLUE)
 	{
 		return "BLUE";
 	}
 
-	if (a == GREEN)
+	if (clr == GREEN)
 	{
 		return "GREEN";
 	}
 
-	if (a == WHITE)
+	if (clr == WHITE)
 	{
 		return "WHITE";
 	}
